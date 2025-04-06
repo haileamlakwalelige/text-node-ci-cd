@@ -3,7 +3,7 @@ name: 🚀 Deploy Node.js app to blog.heldertechnologies.com via FTP
 on:
   push:
     branches:
-      - main
+      - main   # or your branch name
 
 jobs:
   deploy:
@@ -24,5 +24,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          local-dir: ./   # Upload everything
-          server-dir: ${{ secrets.FTP_TARGET }}
+          local-dir: ./   # upload everything
+          server-dir: ${{ secrets.FTP_TARGET }}   # to /blog.heldertechnologies.com/
