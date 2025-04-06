@@ -1,0 +1,30 @@
+name: 🚀 Deploy Node.js app to blog.heldertechnologies.com via FTP
+
+on:
+  push:
+    branches:
+      - main  # or your production branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📦 Install dependencies (optional)
+        run: |
+          npm install
+          npm run build  # only if you have a build step
+
+      - name: 📤 Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          server-dir: ${{ secrets.FTP_TARGET }}
+          protocol: ftp
+          dangerous-clean-slate: false  # true if you want to delete old files first
