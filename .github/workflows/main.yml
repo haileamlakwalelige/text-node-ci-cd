@@ -23,6 +23,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
           local-dir: ./   # upload everything
-          server-dir: ${{ secrets.FTP_TARGET }}   # to /blog.heldertechnologies.com/
+          server-dir: /   # to /blog.heldertechnologies.com/
