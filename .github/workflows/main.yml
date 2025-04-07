@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./    # local files
-          server-dir: /node.heldertechnologies.com/  # important: correct folder!
+          server-dir: /  # important: correct folder!
