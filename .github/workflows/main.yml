@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           # local-dir: ./    # local project files
-          server-dir: /blog.heldertechnologies.com/  # your subdomain folder!
+          server-dir: / # your subdomain folder!
